@@ -1,3 +1,12 @@
+##This program can generate essential oil blends in combination lengths of 2, 3, or a mixture of 2 and 3.
+##All essential oils included are safe for cold process soap making (though you may want to do your own research)
+##You can select the number of combinations you want to generate
+##You can select whether you want to base your combinations on the listed scent categories or top, middle, and base scent notes
+##You can select the categories you want the combinations to select from
+##You can select a specific essential oil that must be included in all your combinations
+##Selecting masculine, feminine, or unisex limits the combinations to only oils in those categories
+##You can run the program as many times as you want by selecting "Y", or exit by selecting "N"
+
 import random
 
 fragrances = ("anise", "basil", "bergamot", "black pepper", "cardamom", "cedarwood", "chamomile", "citronella", 
@@ -392,9 +401,12 @@ if __name__ == "__main__":
         print()
 
         if notesOrCategories == 1:
-
-            
-            print("The options for scent categories are the following:")
+            selection = ""
+            if comboSize in ("both", "3"):
+                selection = "3"
+            elif comboSize == "2":
+                selection = "2"
+            print("The options for scent categories are the following (choose {selection}):")
             print(printSetString(categories))
             print("(Note: select unisex rather than selecting masculine and feminine at the same time.)")
 
