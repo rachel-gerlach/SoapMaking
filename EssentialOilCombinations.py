@@ -402,11 +402,11 @@ if __name__ == "__main__":
 
         if notesOrCategories == 1:
             selection = ""
-            if comboSize in ("both", "3"):
+            if comboSize in ("3", "both"):
                 selection = "3"
             elif comboSize == "2":
                 selection = "2"
-            print("The options for scent categories are the following (choose {selection}):")
+            print("The options for scent categories are the following (choose " + selection + "): ")
             print(printSetString(categories))
             print("(Note: select unisex rather than selecting masculine and feminine at the same time.)")
 
@@ -525,8 +525,12 @@ if __name__ == "__main__":
 
         #Combinations based on base, middle and top notes
         else:
-
-            print("The options for scent categories are the following (choose 2):")
+            selection = ""
+            if comboSize in ("3", "both"):
+                selection = "3"
+            elif comboSize == "2":
+                selection = "2"
+            print("The options for scent categories are the following (choose " + selection + "): ")
             print(printSetString(categories))
             print("(Note: select unisex rather than selecting masculine and feminine at the same time.)")
 
