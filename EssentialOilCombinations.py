@@ -760,7 +760,7 @@ if __name__ == "__main__":
                 if mustContBool == "Y":
                     combinations3 = onlyCombosThatContain(combinations3, mustCont)
                     combinations2 = onlyCombosThatContain(combinations2, mustCont)
-                #removing combinations that don't include 
+                #removing combinations that don't include both selected categories
                 combinations3 = containsFromCategory(combinations3, set1)
                 combinations2 = containsFromCategory(combinations2, set1)
                 combinations3 = containsFromCategory(combinations3, set2)
