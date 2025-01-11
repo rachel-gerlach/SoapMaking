@@ -9,23 +9,27 @@
 
 import random
 
-fragrances = ("anise", "basil", "bergamot", "black pepper", "cardamom", "cedarwood", "chamomile", "citronella", 
+##   MUST UPDATE NEW FRAGRANCE CATEGORIES ADDED IN identifyCategory FOR PROGRAM TO RECOGNIZE NAMES
+##   Adding essential oils to a category does not require any further action
+fragrances = ("anise", "basil", "bergamot", "black pepper", "blue tansy", "cardamom", "cedarwood", "chamomile", "citronella", 
                "eucalyptus", "fennel", "fir", "frankincense", "geranium", "ginger", "jasmine", "juniper berry", "lavender", 
                "lemongrass", "litsea cubeba", "mace", "oregano", "palmarosa", "patchouli", "peppermint", 
                "petitgrain", "rosemary", "sage", "spearmint", "spruce", "tea tree", "thyme", "tonka bean", "wintergreen", 
                "ylang ylang")
 
-categories = ("citrusy", "camphorous", "spicy", "sweet", "herbal", "medicinal", "woody", "musky", "floral", 
+categories = sorted("citrusy", "fruity", "camphorous", "spicy", "sweet", "herbal", "medicinal", "woody", "musky", "floral", 
               "fresh", "masculine", "feminine", "unisex")
 
-citrusy = ("bergamot", "citronella", "lemongrass",  "litsea cubeba", "petitgrain")
+citrusy = ("bergamot", "citronella", "frankincense", "lemongrass", "litsea cubeba", "petitgrain")
+
+fruity = ("bergamot", "blue tansy", "citronella", "frankincense", "lemongrass", "litsea cubeba", "tonka bean", "ylang ylang")
 
 camphorous = ("cedarwood", "eucalyptus", "lavender", "peppermint", "spearmint", "spruce", "wintergreen")
 
 spicy = ("anise", "black pepper", "cardamom", "frankincense", "ginger", "juniper berry", "mace", "oregano", 
          "rosemary", "thyme", "tonka bean", "ylang ylang")
 
-sweet = ("anise", "bergamot", "cardamom", "citronella", "fir", "frankincense", "geranium", "jasmine", "lavender", "lemongrass", 
+sweet = ("anise", "bergamot", "blue tansy", "cardamom", "citronella", "fir", "frankincense", "geranium", "jasmine", "lavender", "lemongrass", 
          "litsea cubeba", "mace", "palmarosa", "peppermint", "petitgrain", "rosemary", "spearmint", "tonka bean", 
          "wintergreen", "ylang ylang")
 
@@ -34,12 +38,12 @@ herbal = ("basil", "chamomile", "fennel", "geranium", "oregano", "peppermint", "
 
 medicinal = ("eucalyptus", "tea tree", "wintergreen", "ylang ylang")
 
-woody = ("anise", "cedarwood", "frankincense", "juniper berry", "litsea cubeba", "petitgrain", "tonka bean", "spruce", 
+woody = ("anise", "cedarwood", "frankincense", "juniper berry", "litsea cubeba", "mace", "petitgrain", "tonka bean", "spruce", 
          "vetiver")
 
 musky = ("anise", "citronella", "frankincense", "patchouli")
 
-floral = ("chamomile", "geranium", "jasmine", "lavender", "litsea cubeba", "mace", "palmarosa", "petitgrain", "rosemary", 
+floral = ("blue tansy", "chamomile", "geranium", "jasmine", "lavender", "litsea cubeba", "mace", "palmarosa", "petitgrain", "rosemary", 
           "ylang ylang")
 
 fresh = ("bergamot", "cedarwood", "chamomile", "citronella", "eucalyptus", "fir", "geranium", "ginger", "lavender", 
@@ -224,6 +228,8 @@ def identifyCategory(catName):
     """Takes a category name as input and returns the accompanying set."""
     if catName == "citrusy":
         return set(citrusy)
+    elif catName == "fruity":
+        return set(fruity)
     elif catName == "camphorous":
         return set(camphorous)
     elif catName == "spicy":
